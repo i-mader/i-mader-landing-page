@@ -19,7 +19,9 @@ jobs:
           npm run build
           ls -la .next  # Debugging step to list contents of out directory
 
-        
+      - name: Create tarball of the repository
+        run: tar -czf i-mader-lending-page.tar.gz .
+          
       - name: Adding private SSH key to ssh-agent
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -37,8 +39,12 @@ jobs:
           rm -rf /root/i-mader-landing-page/*
           echo '** old files removed **'
           "
-          scp  -o StrictHostKeyChecking=no -r . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
+          scp  -o StrictHostKeyChecking=no -r i-mader-lending-page.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd /root/i-mader-landing-page
+            tar -xzf i-mader-lending-page.tar.gz
+            rm i-mader-lending-page.tar.gz
+            echo '** files extracted **'          
             echo "** restarting service tof apply new version **"
             ls -la /root/i-mader-landing-page  # Debugging step to list contents of out directory
             pm2 start npm --name "i-mader.tech" -- start
