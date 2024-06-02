@@ -71,7 +71,7 @@ const SwiperCard = () => {
                 src="/images/egi.png"
                 width={100}
                 height={100}
-                alt="daus"
+                alt="egi"
               />
             </div>
             <div className="bg-red-500"></div>
@@ -85,7 +85,7 @@ const SwiperCard = () => {
                 src="/images/rahmat.png"
                 width={100}
                 height={100}
-                alt="daus"
+                alt="rahmat"
               />
             </div>
             <div className="bg-red-500"></div>
@@ -99,7 +99,7 @@ const SwiperCard = () => {
                 src="/images/martin.png"
                 width={100}
                 height={100}
-                alt="daus"
+                alt="martin"
               />
             </div>
             <div className="bg-red-500"></div>
