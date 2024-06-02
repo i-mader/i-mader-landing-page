@@ -20,7 +20,9 @@ jobs:
           ls -la .next  # Debugging step to list contents of out directory
 
       - name: Create tarball of the repository
-        run: tar -czf i-mader-lending-page.tar.gz .
+        run: |
+          mkdir -p archive
+          tar --exclude='./archive' --exclude='./node_modules' --exclude='./.git' -czf archive/i-mader-landing-page.tar.gz .
           
       - name: Adding private SSH key to ssh-agent
         env:
