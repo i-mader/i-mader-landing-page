@@ -13,12 +13,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: |
-          ls -la .
-          npm run build
-          ls -la .next  # Debugging step to list contents of out directory
-
       - name: Create tarball of the repository
         run: |
           mkdir -p archive
@@ -49,8 +43,11 @@ jobs:
             echo '** files extracted **'          
             echo "** restarting service tof apply new version **"
             ls -la /root/i-mader-landing-page  # Debugging step to list contents of out directory
+            npm install
+            npm run build
+
             pm2 start npm --name "i-mader.tech" -- start
             pm2 save
-            pm2 startup
+            pm2 startup systemd
             echo "** service started **"
           " || exit 1
