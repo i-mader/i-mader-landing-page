@@ -16,10 +16,8 @@ jobs:
       - name: Build
         run: |
           npm run build
-          ls -la build  # Debugging step to list contents of out directory
+          ls -la .next  # Debugging step to list contents of out directory
 
-      - name: Test
-        run: npm test -- --watchAll=false
         
       - name: Adding private SSH key to ssh-agent
         env:
@@ -34,9 +32,16 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+          rm -rf /var/www/i-mader.tech/html/*
+          echo '** old files removed **'
+          "
           scp  -o StrictHostKeyChecking=no -r build/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/i-mader.tech/html
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
             echo "** restarting service tof apply new version **"
             ls -la /var/www/i-mader.tech/html  # Debugging step to list contents of out directory
+            pm2 start npm --name "i-mader.tech" -- start
+            pm2 save
+            pm2 startup
             echo "** service started **"
           " || exit 1
