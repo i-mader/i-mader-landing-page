@@ -1,0 +1,42 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: |
+          npm run build
+          ls -la build  # Debugging step to list contents of out directory
+
+      - name: Test
+        run: npm test -- --watchAll=false
+        
+      - name: Adding private SSH key to ssh-agent
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: scp binary to GCE and apply latest version
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          scp  -o StrictHostKeyChecking=no -r build/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/i-mader.tech/html
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            echo "** restarting service tof apply new version **"
+            ls -la /var/www/i-mader.tech/html  # Debugging step to list contents of out directory
+            echo "** service started **"
+          " || exit 1
