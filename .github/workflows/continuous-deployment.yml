@@ -41,7 +41,7 @@ jobs:
           rm -rf /root/i-mader-landing-page/*
           echo '** old files removed **'
           "
-          scp  -o StrictHostKeyChecking=no -r i-archive/i-mader-landing-page.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
+          scp  -o StrictHostKeyChecking=no -r archive/i-mader-landing-page.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
             cd /root/i-mader-landing-page
             tar -xzf i-mader-lending-page.tar.gz
