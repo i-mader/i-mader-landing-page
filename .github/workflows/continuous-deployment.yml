@@ -14,7 +14,9 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          ls -la build  # Debugging step to list contents of out directory
 
       - name: Test
         run: npm test -- --watchAll=false
