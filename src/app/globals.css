@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer components {
+  .home-sec-1 {
+    @apply border bg-gradient-to-r from-[#0A65E4] to-white min-h-[465px] h-[465px] sm:min-h-[465px] sm:h-[465px];
+  }
+  .home-sec-2 {
+    @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10;
+  }
+  .home-sec-3 {
+    @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10 bg-[#F8FBFF];
+  }
+  .home-sec-4 {
+    @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10 bg-[#FFFFFF];
+  }
+  .home-sec-5 {
+    @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10 bg-[#F8FBFF];
+  }
+  .footer-contact-me {
+    @apply pt-10 sm:pt-24 pb-5 sm:pb-16 px-5 sm:px-10;
+  }
+}
+
+.swiper-slide-cards .swiper {
+  width: 240px;
+  height: 320px;
+}
+@media screen and (max-width: 767px) {
+  .swiper-slide-cards .swiper {
+    width: 160px;
+    height: 260px;
+  }
+}
+
+.swiper-slide-cards .swiper-pagination {
+  bottom: -3rem !important;
+}
+@media screen and (max-width: 767px) {
+  .swiper-slide-cards .swiper-pagination {
+    bottom: -1.5rem !important;
+  }
+}
+
+.swiper-slide-cards .swiper-slide {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide-cards .swiper-slide {
+  border: 1px solid #0a65e4;
+  border-right: 10px solid #0a65e4;
+  border-left: 10px solid #0a65e4;
+  border-top: 10px solid #0a65e4;
+  border-bottom: 70px solid #0a65e4;
+}
+
+.swiper-custome-btn-nav button.custom-nav-btn:disabled {
+  background-color: white !important;
+}
+.swiper-custome-btn-nav .swiper-pagination {
+  opacity: 0;
+}
+.swiper-custome-btn-nav button.custom-nav-btn:disabled svg path {
+  fill: #0077ff !important;
+}
