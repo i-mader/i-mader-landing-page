@@ -45,21 +45,10 @@ jobs:
             npm install
             npm run build
 
-            # Check if the process "i-mader.tech" is already running
-            pm2 describe i-mader.tech > /dev/null
+            pm2 stop i-mader.tech
 
-            # Get the exit status of the last command
-            PROCESS_STATUS=$?
-
-            # If the process is running, restart it; otherwise, start it
-            if [ $PROCESS_STATUS -eq 0 ]; then
-                echo "Restarting i-mader.tech..."
-                pm2 restart i-mader.tech
-            else
-                echo "Starting i-mader.tech..."
-                pm2 start npm --name "i-mader.tech" -- start
-            fi
-
+            pm2 start npm --name "i-mader.tech" -- start
+            
             # Save the PM2 process list
             pm2 save
 
