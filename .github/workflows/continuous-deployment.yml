@@ -37,10 +37,9 @@ jobs:
           "
           scp  -o StrictHostKeyChecking=no -r archive/i-mader-landing-page.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            cd /root/i-mader-landing-page
-            tar -xzf ~/i-mader-landing-page/i-mader-lending-page.tar.gz
+            cd i-mader-landing-page && tar -xzf i-mader-landing-page.tar.gz
+            echo '** files extracted **'    
             rm i-mader-lending-page.tar.gz
-            echo '** files extracted **'          
             echo "** restarting service tof apply new version **"
             ls -la /root/i-mader-landing-page  # Debugging step to list contents of out directory
             npm install
@@ -48,10 +47,10 @@ jobs:
 
             # Check if the process "i-mader.tech" is already running
             pm2 describe i-mader.tech > /dev/null
-                    
+
             # Get the exit status of the last command
             PROCESS_STATUS=$?
-                    
+
             # If the process is running, restart it; otherwise, start it
             if [ $PROCESS_STATUS -eq 0 ]; then
                 echo "Restarting i-mader.tech..."
@@ -60,10 +59,10 @@ jobs:
                 echo "Starting i-mader.tech..."
                 pm2 start npm --name "i-mader.tech" -- start
             fi
-                    
+
             # Save the PM2 process list
             pm2 save
-                    
+
             # Set up PM2 to start on system boot
             pm2 startup systemd
             echo "** service started **"
