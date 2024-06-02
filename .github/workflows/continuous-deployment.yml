@@ -15,6 +15,7 @@ jobs:
 
       - name: Build
         run: |
+          ls -la .
           npm run build
           ls -la .next  # Debugging step to list contents of out directory
 
@@ -36,7 +37,7 @@ jobs:
           rm -rf /root/i-mader-landing-page/*
           echo '** old files removed **'
           "
-          scp  -o StrictHostKeyChecking=no -r .next ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
+          scp  -o StrictHostKeyChecking=no -r . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/i-mader-landing-page
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
             echo "** restarting service tof apply new version **"
             ls -la /root/i-mader-landing-page  # Debugging step to list contents of out directory
