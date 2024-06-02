@@ -36,7 +36,7 @@ jobs:
           rm -rf /var/www/i-mader.tech/html/*
           echo '** old files removed **'
           "
-          scp  -o StrictHostKeyChecking=no -r build/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/i-mader.tech/html
+          scp  -o StrictHostKeyChecking=no -r .next/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/i-mader.tech/html
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
             echo "** restarting service tof apply new version **"
             ls -la /var/www/i-mader.tech/html  # Debugging step to list contents of out directory
