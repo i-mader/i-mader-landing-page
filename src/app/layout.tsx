@@ -9,6 +9,17 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "I-Mader - Digital Innovation Maker For Your Bussines",
   description: "Digital Innovation Maker For Your Bussines",
+  icons: {
+    icon: './icon.ico',
+    shortcut: './icon.ico',
+    apple: './apple-touch-icon.ico'
+  },
+  openGraph:{
+    url: "i-mader.tech",
+    title:"I-Mader - Digital Innovation Maker For Your Bussines",
+    description:"Digital Innovation Maker For Your Bussines",
+    type:"website",
+  },
 };
 
 export default function RootLayout({
