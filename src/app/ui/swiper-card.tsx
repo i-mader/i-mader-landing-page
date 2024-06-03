@@ -54,7 +54,7 @@ const SwiperCard = () => {
             <div className="w-full h-full">
               <Image
                 className="w-full hfull"
-                src="/images/daus.png"
+                src="/images/founder/daus.png"
                 width={100}
                 height={100}
                 alt="daus"
@@ -68,7 +68,7 @@ const SwiperCard = () => {
             <div className="w-full h-full">
               <Image
                 className="w-full hfull"
-                src="/images/egi.png"
+                src="/images/founder/egi.png"
                 width={100}
                 height={100}
                 alt="egi"
@@ -82,7 +82,7 @@ const SwiperCard = () => {
             <div className="w-full h-full">
               <Image
                 className="w-full hfull"
-                src="/images/rahmat.png"
+                src="/images/founder/rahmat.png"
                 width={100}
                 height={100}
                 alt="rahmat"
@@ -96,7 +96,7 @@ const SwiperCard = () => {
             <div className="w-full h-full">
               <Image
                 className="w-full hfull"
-                src="/images/martin.png"
+                src="/images/founder/martin.png"
                 width={100}
                 height={100}
                 alt="martin"
