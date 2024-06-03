@@ -7,8 +7,8 @@ import LayoutHome from "@/components/wrapper/layout-home";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "I-Mader - Digital Innovation Maker For Your Bussines",
-  description: "Digital Innovation Maker For Your Bussines",
+  title: "I-Mader - Digital Innovation Maker For Your Business",
+  description: "Digital Innovation Maker For Your Business",
   icons: {
     icon: './ui/icon.ico',
     shortcut: './ui/icon.ico',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph:{
     url: "i-mader.tech",
     title:"I-Mader - Digital Innovation Maker For Your Bussines",
-    description:"Digital Innovation Maker For Your Bussines",
+    description:"Digital Innovation Maker For Your Business",
     type:"website",
   },
 };

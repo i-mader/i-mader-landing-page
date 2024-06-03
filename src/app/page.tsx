@@ -72,7 +72,7 @@ export default function Home() {
           <div className="col-span-6">
             <div className="h-full flex items-center justify-center py-0 px-5 sm:py-10 sm:px-10">
               <h1 className="text-white text-2xl sm:text-6xl font-bold leading-tight">
-                Digital Innovation Maker For Your Bussines
+                Digital Innovation Maker For Your Business
               </h1>
             </div>
           </div>
@@ -91,25 +91,34 @@ export default function Home() {
           Why Choose Us?
         </h2>
         <div className="grid grid-cols-4 sm:grid-cols-12 mt-5 sm:mt-14 gap-5 sm:gap-10">
-          {[1, 2, 3].map((items: any) => {
-            return (
-              <div className="col-span-4" key={items}>
-                <Card hoverable>
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="w-[50px] h-[50px] sm:w-[96px] sm:h-[96px] bg-[#217BF4] rounded-full"></div>
-                    <h3 className="text-[#217BF4] text-lg sm:text-2xl font-bold text-center mt-5">
-                      Software Development
-                    </h3>
-                    <p className="text-sm sm:text-base text-[#656464] text-center mt-3">
-                      Whether you are looking to buy a fixer-upper or renovate
-                      your current home for sale, we will walk you through
-                      potential returns for projects.
-                    </p>
-                  </div>
-                </Card>
-              </div>
-            );
-          })}
+          {[
+            {
+              title: "Project Management",
+              description: "Effective planning, execution, and delivery of IT projects with a focus on aligning with business goals, minimizing risks, and optimizing resources."
+            },
+            {
+              title: "Digital Transformation",
+              description: "Empowering your business to embrace the digital age by leveraging cutting-edge technologies to automate processes, enhance efficiency, and drive innovation."
+            },
+            {
+              title: "Software Development",
+              description: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems."
+            }
+          ].map((item, index) => (
+            <div className="col-span-4" key={index}>
+              <Card hoverable>
+                <div className="flex flex-col items-center justify-center">
+                  <div className="w-[50px] h-[50px] sm:w-[96px] sm:h-[96px] bg-[#217BF4] rounded-full"></div>
+                  <h3 className="text-[#217BF4] text-lg sm:text-2xl font-bold text-center mt-5">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#656464] text-center mt-3">
+                    {item.description}
+                  </p>
+                </div>
+              </Card>
+            </div>
+          ))}
         </div>
         <div className="w-full flex items-center justify-center mt-10 sm:mt-16">
           <Button
@@ -130,7 +139,7 @@ export default function Home() {
         </div>
       </div>
       {/* sec 4 */}
-      <div id="home-sec-4" className="home-sec-4">
+      <div id="our-clients" className="home-sec-4">
         <h2 className="text-[#217BF4] text-xl sm:text-3xl font-bold text-center">
           Our Clients
         </h2>
