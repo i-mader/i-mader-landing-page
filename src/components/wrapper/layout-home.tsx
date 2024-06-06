@@ -129,6 +129,14 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
+const windowLocationHref = (WaRco: string, InitialMessage: string) => {
+  window.location.href = `https://api.whatsapp.com/send?phone=${WaRco}&text=${InitialMessage}`;
+};
+
+const openWhatsApp = () => {
+  windowLocationHref("6281272914023", "Hello I-Mader  ..");
+};
+
 const LayoutHome = ({ children }: LayoutHome) => {
   const [isMobile, setIsMobile] = useState(false);
   const {
@@ -194,7 +202,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                 <div className="col-span-6">
                   <div className="bg-white rounded-lg px-5 pt-5 pb-4">
                     <p className="font-bold text-xl">
-                      Hotline 24/7 <br /> (+23) 5535 68 68
+                      Hotline 24/7 <br /> 081272914023
                     </p>
                     <p className="mt-8">
                       <span className="font-bold">Address</span>
@@ -204,12 +212,10 @@ const LayoutHome = ({ children }: LayoutHome) => {
                     <p className="mt-2">
                       <span className="font-bold">Email</span>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-                      &nbsp;&nbsp; marketing@i-mader.tech
-                    </p>
-                    <p className="mt-2">
-                      <span className="font-bold">Fax</span>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-                      &nbsp;&nbsp; (702) 555-0122
+                      &nbsp;&nbsp;{" "}
+                      <Link href="mailto:business@i-mader.tech">
+                        business@i-mader.tech
+                      </Link>
                     </p>
                     <p className="mt-2">
                       <span className="font-bold">Work Hour</span>
@@ -444,6 +450,17 @@ const LayoutHome = ({ children }: LayoutHome) => {
           </div>
         </div>
       </Footer>
+      <button
+        className="fixed bottom-4 right-4 w-14 h-14 max-w-[56px] cursor-pointer z-[999]"
+        onClick={openWhatsApp}
+      >
+        <Image
+          src="/images/wa.svg"
+          alt="WhatsApp"
+          layout="fill"
+          objectFit="contain"
+        />
+      </button>
     </Layout>
   );
 };

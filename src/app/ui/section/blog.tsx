@@ -25,7 +25,7 @@ const Blog = () => {
   return (
     <div id="blog" className="home-sec-3">
       <h2 className="text-[#217BF4] text-xl sm:text-3xl font-bold text-center">
-        BLOG / BERITA
+        BLOG / NEWS
       </h2>
 
       {isLoading ? (
