@@ -34,29 +34,43 @@ const handleChange = (value: string) => {
 const menus: MenuItem[] = [
   {
     key: 1,
-    label: <Link href="#home">HOME</Link>,
+    label: (
+      <Link href="#home">
+        <span className="font-semibold">HOME</span>
+      </Link>
+    ),
   },
   {
     key: 2,
-    label: "SERVICE",
+    label: <span className="font-semibold">SERVICE</span>,
   },
   {
     key: 3,
-    label: <Link href="#our-clients">OUR CLIENTS</Link>,
+    label: (
+      <Link href="#our-clients">
+        <span className="font-semibold">OUR CLIENTS</span>
+      </Link>
+    ),
   },
   {
     key: 4,
-    label: "ABOUT",
+    label: <span className="font-semibold">ABOUT</span>,
   },
   {
     key: 5,
-    label: <Link href="#blog">BLOG</Link>,
+    label: (
+      <Link href="#blog">
+        <span className="font-semibold">BLOG</span>
+      </Link>
+    ),
   },
   {
     key: 6,
     label: (
       <Link href="#contact-us">
-        <Button type="primary">CONTACT US</Button>
+        <Button type="primary">
+          <span className="font-semibold">CONTACT US</span>
+        </Button>
       </Link>
     ),
   },
@@ -71,23 +85,35 @@ const menus: MenuItem[] = [
 const menus2: MenuItem[] = [
   {
     key: 1,
-    label: <Link href="#home">HOME</Link>,
+    label: (
+      <Link href="#home">
+        <span className="font-semibold">HOME</span>
+      </Link>
+    ),
   },
   {
     key: 2,
-    label: "SERVICE",
+    label: <span className="font-semibold">SERVICE</span>,
   },
   {
     key: 3,
-    label: <Link href="#our-clients">OUR CLIENTS</Link>,
+    label: (
+      <Link href="#our-clients">
+        <span className="font-semibold">OUR CLIENTS</span>
+      </Link>
+    ),
   },
   {
     key: 4,
-    label: "ABOUT",
+    label: <span className="font-semibold">ABOUT</span>,
   },
   {
     key: 5,
-    label: <Link href="#blog">BLOG</Link>,
+    label: (
+      <Link href="#blog">
+        <span className="font-semibold">BLOG</span>
+      </Link>
+    ),
   },
 ];
 
@@ -139,9 +165,9 @@ const LayoutHome = ({ children }: LayoutHome) => {
           style={{ flex: 1, minWidth: 0, justifyContent: "end" }}
         />
       </Header>
-      <Content className="py-0 px-0 sm:px-12">
+      <Content className="p-0">
         {/* <Breadcrumb items={[{ title: "sample" }, { title: "sample1" }]} /> */}
-        <div className="p-0 sm:p-6">{children}</div>
+        <div className="p-0">{children}</div>
       </Content>
       <Footer
         id="contact-us"
