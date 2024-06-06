@@ -10,14 +10,15 @@ export const metadata: Metadata = {
   title: "I-Mader - Digital Innovation Maker For Your Business",
   description: "Digital Innovation Maker For Your Business",
   icons: {
-    icon: './ui/icon.ico',
-    shortcut: './ui/icon.ico',
+    icon: "/fav-icon/favicon.ico?v=4",
+    apple: "/fav-icon/apple-touch-icon.png?v=4",
+    shortcut: "/fav-icon/apple-touch-icon.png",
   },
-  openGraph:{
+  openGraph: {
     url: "i-mader.tech",
-    title:"I-Mader - Digital Innovation Maker For Your Bussines",
-    description:"Digital Innovation Maker For Your Business",
-    type:"website",
+    title: "I-Mader - Digital Innovation Maker For Your Bussines",
+    description: "Digital Innovation Maker For Your Business",
+    type: "website",
   },
 };
 

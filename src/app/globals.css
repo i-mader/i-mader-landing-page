@@ -37,7 +37,7 @@ body {
 }
 @layer components {
   .home-sec-1 {
-    @apply border bg-gradient-to-r from-[#0A65E4] to-white min-h-[465px] h-[465px] sm:min-h-[465px] sm:h-[465px];
+    @apply border bg-gradient-to-r from-[#0A65E4] to-white min-h-[465px] h-[465px] sm:min-h-[465px] sm:h-auto;
   }
   .home-sec-2 {
     @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10;

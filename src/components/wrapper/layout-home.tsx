@@ -171,20 +171,23 @@ const LayoutHome = ({ children }: LayoutHome) => {
                       Hotline 24/7 <br /> (+23) 5535 68 68
                     </p>
                     <p className="mt-8">
-                      <span className="font-bold">Address</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
-                      DKI Jakarta, Indonesia
+                      <span className="font-bold">Address</span>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                      &nbsp;&nbsp; DKI Jakarta, Indonesia
                     </p>
                     <p className="mt-2">
-                      <span className="font-bold">Email</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
-                      marketing@i-mader.tech
+                      <span className="font-bold">Email</span>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                      &nbsp;&nbsp; marketing@i-mader.tech
                     </p>
                     <p className="mt-2">
-                      <span className="font-bold">Fax</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
-                      (702) 555-0122
+                      <span className="font-bold">Fax</span>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                      &nbsp;&nbsp; (702) 555-0122
                     </p>
                     <p className="mt-2">
-                      <span className="font-bold">Work Hour</span>&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
-                      Mon - Sat: 9:00 - 18:00
+                      <span className="font-bold">Work Hour</span>
+                      &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp; Mon - Sat: 9:00 - 18:00
                     </p>
                   </div>
                 </div>
@@ -219,7 +222,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                           <Input placeholder="Email Address*" />
                         </Form.Item>
                       </div>
-                      <div className="col-span-2">
+                      {/* <div className="col-span-2">
                         <Form.Item<FieldType>
                           name="help"
                           rules={[
@@ -231,7 +234,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                         >
                           <Input placeholder="How can we help you?" />
                         </Form.Item>
-                      </div>
+                      </div> */}
                       <div className="col-span-2">
                         <Form.Item<FieldType>
                           name="helpDesc"
@@ -244,7 +247,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                         >
                           <Input.TextArea
                             placeholder="How can we help you?"
-                            rows={5}
+                            rows={6}
                           />
                         </Form.Item>
                       </div>
