@@ -318,7 +318,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
             </Form>
           </div>
         </div>
-        <div className="flex flex-wrap gap-5 sm:gap-0 items-center justify-between">
+        {/* <div className="flex flex-wrap gap-5 sm:gap-0 items-center justify-between">
           <Menu
             theme="dark"
             mode={`${isMobile ? "vertical" : "horizontal"}`}
@@ -338,7 +338,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
       </Footer>
       <Footer style={{ backgroundColor: "#20202D" }} className="px-5 sm:px-12">
         <div className="bg-[#20202D]">
