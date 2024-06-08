@@ -9,7 +9,7 @@ const WhyChooseUs = () => {
   return (
     <div id="why-choose-us" className="home-sec-2">
       <h2 className="text-[#217BF4] text-xl sm:text-3xl font-bold text-center">
-        Why Choose Us?
+        Our Services
       </h2>
       <div className="grid grid-cols-4 sm:grid-cols-12 mt-5 sm:mt-14 gap-5 sm:gap-10">
         {[

@@ -31,53 +31,60 @@ const handleChange = (value: string) => {
   console.log(`selected ${value}`);
 };
 
-const menus: MenuItem[] = [
+const leftMenus: MenuItem[]=[
   {
     key: 1,
     label: (
-      <Link href="#home">
-        <span className="font-semibold">HOME</span>
-      </Link>
-    ),
-  },
-  {
-    key: 2,
-    label: <span className="font-semibold">SERVICE</span>,
-  },
-  {
-    key: 3,
-    label: (
-      <Link href="#our-clients">
-        <span className="font-semibold">OUR CLIENTS</span>
-      </Link>
-    ),
-  },
-  {
-    key: 4,
-    label: <span className="font-semibold">ABOUT</span>,
-  },
-  {
-    key: 5,
-    label: (
-      <Link href="#blog">
-        <span className="font-semibold">BLOG</span>
-      </Link>
-    ),
-  },
-  {
-    key: 6,
-    label: (
       <Link href="#contact-us">
         <Button type="primary">
-          <span className="font-semibold">CONTACT US</span>
+          <span className="font-semibold text-white">Contact Us</span>
         </Button>
       </Link>
     ),
   },
   {
-    key: 7,
+    key: 2,
     label: (
       <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
+    ),
+  },
+];
+
+const menus: MenuItem[] = [
+  {
+    key: 1,
+    label: (
+      <Link href="#home">
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Home</span>
+      </Link>
+    ),
+  },
+  {
+    key: 2,
+    label: (
+      <Link href="#why-choose-us">
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Services</span>
+      </Link>
+    ),
+  },
+  {
+    key: 3,
+    label: (
+      <Link href="#our-clients">
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Our Clients</span>
+      </Link>
+    ),
+  },
+  {
+    key: 4,
+    label: <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">About</span>,
+  },
+  {
+    key: 5,
+    label: (
+      <Link href="#blog">
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Blog</span>
+      </Link>
     ),
   },
 ];
@@ -168,8 +175,15 @@ const LayoutHome = ({ children }: LayoutHome) => {
         <Menu
           theme="light"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
+          defaultSelectedKeys={["1"]}
           items={menus}
+          style={{ flex: 1, minWidth: 0, justifyContent: "start" }}
+        />
+        <Menu
+          theme="light"
+          mode="horizontal"
+          selectedKeys={[]}
+          items={leftMenus}
           style={{ flex: 1, minWidth: 0, justifyContent: "end" }}
         />
       </Header>
@@ -201,25 +215,25 @@ const LayoutHome = ({ children }: LayoutHome) => {
               <div className="grid grid-cols-6 sm:grid-cols-12 gap-4">
                 <div className="col-span-6">
                   <div className="bg-white rounded-lg px-5 pt-5 pb-4">
-                    <p className="font-bold text-xl">
-                      Hotline 24/7 <br /> 081272914023
-                    </p>
-                    <p className="mt-8">
-                      <span className="font-bold">Address</span>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-                      &nbsp;&nbsp; DKI Jakarta, Indonesia
+                    <p className="font-bold text-xl mb-4">Got a new project in mind?</p>
+                    <p>Let us know what you're envisioning! Simply fill out the form on the right, and our expert solution team will get back to you within 24 hours on weekdays.</p>
+                    <p className="mt-5">
+                      <span>
+                        <img src="/images/address.png" alt="address" className="inline-block h-6 w-auto" /> &nbsp;
+                        DKI Jakarta, Indonesia
+                      </span>
                     </p>
                     <p className="mt-2">
-                      <span className="font-bold">Email</span>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-                      &nbsp;&nbsp;{" "}
                       <Link href="mailto:business@i-mader.tech">
+                        <img src="/images/email.png" alt="Email" className="inline-block h-6 w-auto" /> &nbsp;
                         business@i-mader.tech
                       </Link>
                     </p>
                     <p className="mt-2">
-                      <span className="font-bold">Work Hour</span>
-                      &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp; Mon - Sat: 9:00 - 18:00
+                      <span>
+                        <img src="/images/phone.png" alt="address" className="inline-block h-6 w-auto" /> &nbsp;
+                        +6281272914023
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -355,7 +369,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
             />
             <div className="flex items-center gap-5 py-5 sm:py-0">
               <a
-                href="https://geeksforgeeks.org"
+                href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -375,7 +389,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                 </div>
               </a>
               <a
-                href="https://geeksforgeeks.org"
+                href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -403,7 +417,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                 </div>
               </a>
               <a
-                href="https://geeksforgeeks.org"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
