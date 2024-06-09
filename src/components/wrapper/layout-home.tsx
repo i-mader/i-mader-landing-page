@@ -27,29 +27,6 @@ type FieldType = {
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
-
-const leftMenus: MenuItem[]=[
-  {
-    key: 1,
-    label: (
-      <Link href="#contact-us">
-        <Button type="primary">
-          <span className="font-semibold text-white">Contact Us</span>
-        </Button>
-      </Link>
-    ),
-  },
-  {
-    key: 2,
-    label: (
-      <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
-    ),
-  },
-];
-
 const menus: MenuItem[] = [
   {
     key: 1,
@@ -75,50 +52,15 @@ const menus: MenuItem[] = [
       </Link>
     ),
   },
-  {
-    key: 4,
-    label: <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">About</span>,
-  },
+  // {
+  //   key: 4,
+  //   label: <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">About</span>,
+  // },
   {
     key: 5,
     label: (
       <Link href="#blog">
         <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Blog</span>
-      </Link>
-    ),
-  },
-];
-
-const menus2: MenuItem[] = [
-  {
-    key: 1,
-    label: (
-      <Link href="#home">
-        <span className="font-semibold">HOME</span>
-      </Link>
-    ),
-  },
-  {
-    key: 2,
-    label: <span className="font-semibold">SERVICE</span>,
-  },
-  {
-    key: 3,
-    label: (
-      <Link href="#our-clients">
-        <span className="font-semibold">OUR CLIENTS</span>
-      </Link>
-    ),
-  },
-  {
-    key: 4,
-    label: <span className="font-semibold">ABOUT</span>,
-  },
-  {
-    key: 5,
-    label: (
-      <Link href="#blog">
-        <span className="font-semibold">BLOG</span>
       </Link>
     ),
   },
@@ -145,14 +87,88 @@ const openWhatsApp = () => {
 };
 
 const LayoutHome = ({ children }: LayoutHome) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+  const menus2: MenuItem[] = [
+    {
+      key: 1,
+      label: (
+        <Link href="#home">
+          <span className="font-semibold">HOME</span>
+        </Link>
+      ),
+    },
+    {
+      key: 2,
+      label: <span className="font-semibold">SERVICE</span>,
+    },
+    {
+      key: 3,
+      label: (
+        <Link href="#our-clients">
+          <span className="font-semibold">OUR CLIENTS</span>
+        </Link>
+      ),
+    },
+    {
+      key: 4,
+      label: <span className="font-semibold">ABOUT</span>,
+    },
+    {
+      key: 5,
+      label: (
+        <Link href="#blog">
+          <span className="font-semibold">BLOG</span>
+        </Link>
+      ),
+    },
+    {
+      key: 6,
+      label: (
+        <Link href="#contact-us">
+          <Button type="primary">
+            <span className="font-semibold text-white">Contact Us</span>
+          </Button>
+        </Link>
+      ),
+    },
+    {
+      key: 7,
+      label: (
+        <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
+      ),
+    },
+  ];
+
+  const [menu, setMenu] = useState<MenuItem[]>([{
+    key: 1,
+    label: (
+      <Link href="#contact-us">
+        <Button type="primary">
+          <span className="font-semibold text-white">Contact Us</span>
+        </Button>
+      </Link>
+    ),
+  },
+  {
+    key: 2,
+    label: (
+      <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
+    ),
+  },]);
+  
   useLayoutEffect(() => {
     const updateSize = () => {
-      setIsMobile(window.innerWidth <= 767);
+      if(window.innerWidth < 767){
+        setIsMobile(true)
+        setMenu(menus2);
+      }else {
+        setIsMobile(false)
+        setMenu(menu);
+      }
     };
 
     window.addEventListener("resize", updateSize);
@@ -172,6 +188,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
             height={200}
           />
         </div>
+        {!isMobile && (
         <Menu
           theme="light"
           mode="horizontal"
@@ -179,11 +196,12 @@ const LayoutHome = ({ children }: LayoutHome) => {
           items={menus}
           style={{ flex: 1, minWidth: 0, justifyContent: "start" }}
         />
+        )}
         <Menu
           theme="light"
           mode="horizontal"
           selectedKeys={[]}
-          items={leftMenus}
+          items={menu}
           style={{ flex: 1, minWidth: 0, justifyContent: "end" }}
         />
       </Header>
