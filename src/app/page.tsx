@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import Hero from "./ui/section/hero";
 import WhyChooseUs from "./ui/section/why-choose-us";
 import Blog from "./ui/section/blog";
