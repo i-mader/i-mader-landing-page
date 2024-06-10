@@ -42,6 +42,12 @@ body {
   .home-sec-2 {
     @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10;
   }
+  .about-us {
+    @apply border pt-16 sm:pt-24 pb-16;
+  }
+  .our-teams {
+    @apply border pt-16 sm:pt-24 pb-16;
+  }
   .home-sec-3 {
     @apply border pt-16 sm:pt-24 pb-16 px-5 sm:px-10 bg-[#F8FBFF];
   }
@@ -99,3 +105,11 @@ body {
 .swiper-custome-btn-nav button.custom-nav-btn:disabled svg path {
   fill: #0077ff !important;
 }
+
+
+/* .ant-notification-notice-wrapper{
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+} */

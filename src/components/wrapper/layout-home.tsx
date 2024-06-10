@@ -1,38 +1,27 @@
 "use client";
 import React, { ReactNode, useLayoutEffect, useState } from "react";
-import {
-  Button,
-  Checkbox,
-  Form,
-  Input,
-  Layout,
-  Menu,
-  Switch,
-  theme,
-} from "antd";
+import { Button, Form, Input, Layout, Menu, Switch, Modal } from "antd";
 import Image from "next/image";
-
 import type { MenuProps } from "antd";
 import type { FormProps } from "antd";
 import Link from "next/link";
+import axios from "axios";
 const { Header, Content, Footer } = Layout;
-
 type FieldType = {
-  username?: string;
+  name?: string;
   email?: string;
-  help?: string;
-  helpDesc?: string;
-  remember?: string;
+  question?: string;
+  remember?: boolean;
 };
-
 type MenuItem = Required<MenuProps>["items"][number];
-
 const menus: MenuItem[] = [
   {
     key: 1,
     label: (
       <Link href="#home">
-        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Home</span>
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">
+          Home
+        </span>
       </Link>
     ),
   },
@@ -40,7 +29,9 @@ const menus: MenuItem[] = [
     key: 2,
     label: (
       <Link href="#why-choose-us">
-        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Services</span>
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">
+          Services
+        </span>
       </Link>
     ),
   },
@@ -48,50 +39,55 @@ const menus: MenuItem[] = [
     key: 3,
     label: (
       <Link href="#our-clients">
-        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Our Clients</span>
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">
+          Our Clients
+        </span>
       </Link>
     ),
   },
-  // {
-  //   key: 4,
-  //   label: <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">About</span>,
-  // },
+  {
+    key: 4,
+    label: (
+      <Link href="#about-us">
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">
+          About Us
+        </span>
+      </Link>
+    ),
+  },
   {
     key: 5,
     label: (
+      <Link href="#our-teams">
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">
+          Our Teams
+        </span>
+      </Link>
+    ),
+  },
+  {
+    key: 6,
+    label: (
       <Link href="#blog">
-        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">Blog</span>
+        <span className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer transition duration-300">
+          Blog
+        </span>
       </Link>
     ),
   },
 ];
-
 interface LayoutHome {
   children: ReactNode;
 }
-
-const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-  console.log("Success:", values);
-};
-
-const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
-
-const windowLocationHref = (WaRco: string, InitialMessage: string) => {
-  window.location.href = `https://api.whatsapp.com/send?phone=${WaRco}&text=${InitialMessage}`;
-};
-
-const openWhatsApp = () => {
-  windowLocationHref("6281272914023", "Hello I-Mader  ..");
-};
-
 const LayoutHome = ({ children }: LayoutHome) => {
+  const [form] = Form.useForm();
+  const [messageDialog, setMessageDialog] = useState({
+    title: "",
+    desc: "",
+  });
+  const [loading, setLoading] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(true);
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
   const menus2: MenuItem[] = [
     {
       key: 1,
@@ -115,10 +111,22 @@ const LayoutHome = ({ children }: LayoutHome) => {
     },
     {
       key: 4,
-      label: <span className="font-semibold">ABOUT</span>,
+      label: (
+        <Link href="#about-us">
+          <span className="font-semibold">ABOUT US</span>,
+        </Link>
+      ),
     },
     {
       key: 5,
+      label: (
+        <Link href="#our-teams">
+          <span className="font-semibold">OUR TEAMS</span>,
+        </Link>
+      ),
+    },
+    {
+      key: 6,
       label: (
         <Link href="#blog">
           <span className="font-semibold">BLOG</span>
@@ -126,7 +134,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
       ),
     },
     {
-      key: 6,
+      key: 7,
       label: (
         <Link href="#contact-us">
           <Button type="primary">
@@ -136,37 +144,37 @@ const LayoutHome = ({ children }: LayoutHome) => {
       ),
     },
     {
-      key: 7,
+      key: 8,
       label: (
         <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
       ),
     },
   ];
-
-  const [menu, setMenu] = useState<MenuItem[]>([{
-    key: 1,
-    label: (
-      <Link href="#contact-us">
-        <Button type="primary">
-          <span className="font-semibold text-white">Contact Us</span>
-        </Button>
-      </Link>
-    ),
-  },
-  {
-    key: 2,
-    label: (
-      <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
-    ),
-  },]);
-  
+  const [menu, setMenu] = useState<MenuItem[]>([
+    {
+      key: 1,
+      label: (
+        <Link href="#contact-us">
+          <Button type="primary">
+            <span className="font-semibold text-white">Contact Us</span>
+          </Button>
+        </Link>
+      ),
+    },
+    {
+      key: 2,
+      label: (
+        <Switch checkedChildren="EN" unCheckedChildren="ID" defaultChecked />
+      ),
+    },
+  ]);
   useLayoutEffect(() => {
     const updateSize = () => {
-      if(window.innerWidth < 767){
-        setIsMobile(true)
+      if (window.innerWidth < 767) {
+        setIsMobile(true);
         setMenu(menus2);
-      }else {
-        setIsMobile(false)
+      } else {
+        setIsMobile(false);
         setMenu(menu);
       }
     };
@@ -176,6 +184,50 @@ const LayoutHome = ({ children }: LayoutHome) => {
 
     return () => window.removeEventListener("resize", updateSize);
   }, []);
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const submitContactUs = async (values: any) => {
+    try {
+      setLoading(true);
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/v1/contact-us/add`,
+        values
+      );
+      form.resetFields();
+      // router.push("#home");
+      setIsModalOpen(true);
+      setMessageDialog({
+        title: "Berhasil",
+        desc: "Anda berhasil melakukan mengirim kosnsultasi",
+      });
+      setLoading(false);
+      console.log("data", data);
+    } catch (error) {
+      setIsModalOpen(true);
+      setMessageDialog({
+        title: "Gagal",
+        desc: "Submit gagal silahkan input ulang",
+      });
+    } finally {
+      setLoading(false);
+      setIsModalOpen(true);
+    }
+  };
+  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+    submitContactUs(values);
+  };
+  const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
+    errorInfo
+  ) => {
+    console.log("Failed:", errorInfo);
+  };
+  const windowLocationHref = (WaRco: string, InitialMessage: string) => {
+    window.location.href = `https://api.whatsapp.com/send?phone=${WaRco}&text=${InitialMessage}`;
+  };
+  const openWhatsApp = () => {
+    windowLocationHref("6281272914023", "Hello I-Mader  ..");
+  };
 
   return (
     <Layout>
@@ -189,13 +241,13 @@ const LayoutHome = ({ children }: LayoutHome) => {
           />
         </div>
         {!isMobile && (
-        <Menu
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          items={menus}
-          style={{ flex: 1, minWidth: 0, justifyContent: "start" }}
-        />
+          <Menu
+            theme="light"
+            mode="horizontal"
+            defaultSelectedKeys={["1"]}
+            items={menus}
+            style={{ flex: 1, minWidth: 0, justifyContent: "start" }}
+          />
         )}
         <Menu
           theme="light"
@@ -229,28 +281,47 @@ const LayoutHome = ({ children }: LayoutHome) => {
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
+              form={form}
             >
               <div className="grid grid-cols-6 sm:grid-cols-12 gap-4">
                 <div className="col-span-6">
                   <div className="bg-white rounded-lg px-5 pt-5 pb-4">
-                    <p className="font-bold text-xl mb-4">Got a new project in mind?</p>
-                    <p>Let us know what you're envisioning! Simply fill out the form on the right, and our expert solution team will get back to you within 24 hours on weekdays.</p>
+                    <p className="font-bold text-xl mb-4">
+                      Got a new project in mind?
+                    </p>
+                    <p>
+                      Let us know what you're envisioning! Simply fill out the
+                      form on the right, and our expert solution team will get
+                      back to you within 24 hours on weekdays.
+                    </p>
                     <p className="mt-5">
                       <span>
-                        <img src="/images/address.png" alt="address" className="inline-block h-6 w-auto" /> &nbsp;
-                        DKI Jakarta, Indonesia
+                        <img
+                          src="/images/address.png"
+                          alt="address"
+                          className="inline-block h-6 w-auto"
+                        />{" "}
+                        &nbsp; DKI Jakarta, Indonesia
                       </span>
                     </p>
                     <p className="mt-2">
                       <Link href="mailto:business@i-mader.tech">
-                        <img src="/images/email.png" alt="Email" className="inline-block h-6 w-auto" /> &nbsp;
-                        business@i-mader.tech
+                        <img
+                          src="/images/email.png"
+                          alt="Email"
+                          className="inline-block h-6 w-auto"
+                        />{" "}
+                        &nbsp; business@i-mader.tech
                       </Link>
                     </p>
                     <p className="mt-2">
                       <span>
-                        <img src="/images/phone.png" alt="address" className="inline-block h-6 w-auto" /> &nbsp;
-                        +6281272914023
+                        <img
+                          src="/images/phone.png"
+                          alt="address"
+                          className="inline-block h-6 w-auto"
+                        />{" "}
+                        &nbsp; +6281272914023
                       </span>
                     </p>
                   </div>
@@ -261,7 +332,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                     <div className="grid grid-cols-2 gap-x-4">
                       <div className="col-span-1">
                         <Form.Item<FieldType>
-                          name="username"
+                          name="name"
                           rules={[
                             {
                               required: true,
@@ -301,7 +372,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
                       </div> */}
                       <div className="col-span-2">
                         <Form.Item<FieldType>
-                          name="helpDesc"
+                          name="question"
                           rules={[
                             {
                               required: true,
@@ -311,12 +382,12 @@ const LayoutHome = ({ children }: LayoutHome) => {
                         >
                           <Input.TextArea
                             placeholder="How can we help you?"
-                            rows={6}
+                            rows={8}
                           />
                         </Form.Item>
                       </div>
                       <div className="col-span-2">
-                        <Form.Item<FieldType>
+                        {/* <Form.Item<FieldType>
                           name="remember"
                           valuePropName="checked"
                           rules={[
@@ -331,15 +402,17 @@ const LayoutHome = ({ children }: LayoutHome) => {
                               By submitting, i’m agreed to the Terms & Conditons
                             </span>
                           </Checkbox>
-                        </Form.Item>
+                        </Form.Item> */}
                         <Form.Item>
                           <Button
+                            loading={loading}
+                            disabled={loading}
                             size="large"
                             className="bg-[#00489A] rounded-full px-10"
                             type="primary"
                             htmlType="submit"
                           >
-                            Request Now
+                            {loading ? "Loading .." : "Request Now"}
                           </Button>
                         </Form.Item>
                       </div>
@@ -386,11 +459,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
               height={100}
             />
             <div className="flex items-center gap-5 py-5 sm:py-0">
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer">
                 <div className="w-9 h-9 rounded-full flex items-center justify-center bg-white">
                   <svg
                     width="22"
@@ -493,6 +562,18 @@ const LayoutHome = ({ children }: LayoutHome) => {
           objectFit="contain"
         />
       </button>
+
+      <Modal
+        title={messageDialog.title}
+        open={isModalOpen}
+        footer={
+          <Button type="primary" onClick={handleOk}>
+            Ok
+          </Button>
+        }
+      >
+        <p>{messageDialog.desc}</p>
+      </Modal>
     </Layout>
   );
 };
