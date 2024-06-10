@@ -191,7 +191,7 @@ const LayoutHome = ({ children }: LayoutHome) => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/contact-us/add`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/v1/contact-us/add`,
         values
       );
       form.resetFields();
