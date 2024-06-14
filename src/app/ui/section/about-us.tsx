@@ -31,7 +31,7 @@ const AboutUs = () => {
         ABOUT US
       </h2>
 
-      <div className="grid grid-cols-1 gap-5 mt-5 sm:mt-14">
+      <div className="grid grid-cols-1 gap-5 mt-5 sm:mt-14 mx-auto max-w-max sm:max-w-4xl">
         {data.map(
           (item: {
             id: number;
