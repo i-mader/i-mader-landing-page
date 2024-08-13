@@ -11,7 +11,7 @@ function SiteMap() {
 
   return (
     <MapContainer
-      className="w-full h-[200px] lg:h-[417px]"
+      className="w-full h-[200px] lg:h-[417px] relative z-40"
       center={markerPosition}
       zoom={13}
       scrollWheelZoom={false}

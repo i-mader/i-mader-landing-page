@@ -34,7 +34,7 @@ const Header = () => {
           ? "py-4 bg-neutral-800 shadow-lg dark:bg-accent"
           : // : "py-4 dark:bg-transparent"
             "py-4 bg-neutral-800"
-      } sticky top-0 z-30 transition-all ${pathname === "/" && "bg-black"}`}
+      } sticky top-0 z-[41] transition-all ${pathname === "/" && "bg-black"}`}
     >
       <div className="bg-neutral-800 absolute inset-0 bg-opacity-20 z-20"></div>
       <div className="bg-neutral-800 absolute inset-0 z-10"></div>

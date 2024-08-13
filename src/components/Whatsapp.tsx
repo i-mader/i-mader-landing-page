@@ -12,7 +12,7 @@ const Whatsapp = () => {
   return (
     <Button
       onClick={() => windowLocationHref("6281272914023", "Hello I-Mader  ..")}
-      className="text-white bg-green hover:bg-opacity-90 rounded-none relative z-[999999]"
+      className="text-white bg-green hover:bg-opacity-90 rounded-none relative z-40"
     >
       <IconWa />
       &nbsp;Whatsapp Us
