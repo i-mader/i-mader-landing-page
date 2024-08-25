@@ -8,7 +8,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
-import { links } from "./Nav";
 import { AlignJustify } from "lucide-react";
 import IconClose from "./icons/close";
 import Logo from "./Logo";
@@ -17,11 +16,36 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Footer from "./Footer";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const MobileNav = () => {
+  const t = useTranslations();
   const path = usePathname();
   const localeActive = useLocale();
+
+  const links = [
+    {
+      path: "/",
+      name: t('home'),
+    },
+    {
+      path: "/services",
+      name: t('service'),
+    },
+    {
+      path: "/projects",
+      name: t('project'),
+    },
+    {
+      path: "/about-us",
+      name: t('about_us_nav'),
+    },
+    {
+      path: "/contact-us",
+      name: t('contact_us'),
+    },
+  ];
+
   return (
     <Sheet>
       <SheetTrigger asChild>

@@ -68,35 +68,32 @@ export interface DataService {
   data: ServiceItem[];
 }
 
-export const dataService: DataService = {
-  title: "We Provide The Best Service For Your Needs",
+export const dataService = (t: (key: string) => string) => ({
+  title: t('services_title'),
   data: [
     {
       id: 1,
-      title: "Software Development",
-      desc1: "Web & mobile app development, Back-end operation.",
-      desc2:
-        "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('software_development_title'),
+      desc1: t('software_development_sub_title'),
+      desc2: t('faq_service_offer_answer'),
       url: "#",
     },
     {
       id: 2,
-      title: "DevOps Consultation",
-      desc1: "Data center security, Technology optimization, Software tools",
-      desc2:
-        "An approach that combines software development (Dev) and information technology operations (Ops) in a harmonious whole to drive better collaboration",
+      title: t('devops_consultation_title'),
+      desc1: t('devops_consultation_sub_title'),
+      desc2: t('devops_consultation_desc'),
       url: "#",
     },
     {
       id: 3,
-      title: "Software Consultant",
-      desc1: "System maintenance, Security consultant, Best ITFramework",
-      desc2:
-        "A linchpin in the technological sector, deftly navigating the confluence of business acumen and IT expertise. Within our professional gambit.",
+      title: t('software_consultant_title'),
+      desc1: t('software_consultant_sub_title'),
+      desc2: t('software_consultant_desc'),
       url: "#",
     },
   ],
-};
+});
 
 export interface ClientDetail {
   id: number;
@@ -119,45 +116,47 @@ export interface FeatureData {
   benefit: Benefit[];
 }
 
-export const featureData: FeatureData = {
-  title: "FEATURES",
-  title1: "We Serve Different From The Others",
-  desc: "To be the Digital Innovation Mader For Your Business. We are committed to delivering exceptional digital solutions that are tailored to meet your unique business needs",
+export const featureData = (t: (key: string) => string) => ({
+  title: t('features'),
+  title1: t('features_desc'),
+  desc: t('digital_innovation_desc'),
   amountOfDetailClient: [
-    { id: 1, value1: "1.000+", value2: "Our satisfied clients" },
-    { id: 2, value1: "150+", value2: "Companies partner" },
-    { id: 3, value1: "300+", value2: "Project well done" },
+    { id: 1, value1: "1.000+", value2: t('trusted_by_satisfied_clients_label') },
+    { id: 2, value1: "150+", value2: t('trusted_by_partners_label') },
+    { id: 3, value1: "300+", value2: t('trusted_by_projects_label') },
   ],
   benefit: [
     {
       id: 1,
       svg: "",
-      title: "Efficiency",
-      desc: "Software services refer to the ability of a system or application to perform tasks more quickly, using fewer resources, or by minimizing the time and human effort",
+      title: t('efficiency'),
+      desc: t('efficiency_desc'),
     },
     {
       id: 2,
       svg: "",
-      title: "Saving Cost",
-      desc: "Can often provide significant cost savings for companies. This can happen through process automation reducing labor costs, reduction in physical infrastructure costs",
+      title: t('saving_cost'),
+      desc: t('saving_cost_desc'),
     },
     {
       id: 3,
       svg: "",
-      title: "Competitiveness",
-      desc: "Success in utilizing digital technology can increase a company's competitiveness. This includes the ability to bring products or services more quickly to market",
+      title: t('competitiveness'),
+      desc: t('competitiveness_desc'),
     },
     {
       id: 4,
       svg: "",
-      title: "Peace of Mind",
-      desc: "You can focus on their core business activities without worrying about technical or operational issues of their IT systems. Using reliable and efficient software",
+      title: t('peace_of_mind'),
+      desc: t('peace_of_mind_desc'),
     },
   ],
-};
+});
 
-export const dataSkills = {
-  title: "The Skills, Tools And Technologies We Are Really Good At:",
+
+
+export const dataSkills = (t: (key: string) => string) => ({
+  title: t('skills_tools_technologies'),
   data: [
     {
       id: 1,
@@ -250,7 +249,7 @@ export const dataSkills = {
       name: "MySQL",
     },
   ],
-};
+});
 
 export interface Mission {
   id: number;
@@ -275,125 +274,127 @@ interface DataAboutUs {
   our_mission: OurMission;
 }
 
-export const aboutUsData: DataAboutUs = {
+export const aboutUsData = (t: (key: string) => string) => ({
   about_us: {
-    title: "ABOUT US",
-    title2: "Become A Pioneer In Digitalizing The World ",
-    desc: "Welcome to Innovation Mader, your premier partner in digital innovation. Our mission is to empower businesses to thrive in the digital age through cutting-edge technology and innovative solutions.",
+    title: t('about_us'),
+    title2: t('features_desc'),
+    desc: t('pioneer_description'),
     path: "/",
     amountOfDetailClient: [
-      { id: 1, value1: "1.000+", value2: "Our satisfied clients" },
-      { id: 2, value1: "150+", value2: "Companies partner" },
-      { id: 3, value1: "300+", value2: "Project well done" },
+      { id: 1, value1: "1.000+", value2: t('trusted_by_satisfied_clients_label') },
+      { id: 2, value1: "150+", value2: t('trusted_by_partners_label') },
+      { id: 3, value1: "300+", value2: t('trusted_by_projects_label') },
     ],
   },
   our_mission: {
-    title: "OUR MISSIONS",
+    title: t('missions'),
     data: [
       {
         id: 1,
-        desc: "Increase efficiency and productivity through advanced digital solutions and easy to use",
+        desc: t('mission_1'),
       },
       {
         id: 2,
-        desc: "Develop technology products and services that can make things easier digitalization process in various sectors.",
+        desc: t('mission_2'),
       },
       {
         id: 3,
-        desc: "Encourage collaboration and innovation to create relevant technology and beneficial to society",
+        desc: t('mission_3'),
       },
       {
         id: 4,
-        desc: "Provide support and education to help clients adapt with digital transformation.",
+        desc: t('mission_4'),
       },
       {
         id: 5,
-        desc: "Committed to sustainability and social responsibility in everything the digitalization steps we are taking",
+        desc: t('mission_5'),
       },
     ],
   },
-};
+});
 
-export const dataFaq = {
-  title: "FAQs",
-  desc: "Services detail, pricing information, and more to help you make an informed decision",
+
+export const dataFaq = (t: (key: string) => string) => ({
+  title: t('faqs_title'),
+  desc: t('faqs_description'),
   data: [
     {
       id: 1,
-      title: "What service do you offer?",
-      desc: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('faq_service_offer_question'),
+      desc: t('faq_service_offer_answer'),
     },
     {
       id: 2,
-      title: "How can your IT consulting services benefit my business?",
-      desc: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('faq_it_consulting_benefit_question'),
+      desc: t('faq_it_consulting_benefit_answer'),
     },
     {
       id: 3,
-      title: "Why should I choosen you?",
-      desc: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('faq_why_choose_us_question'),
+      desc: t('faq_why_choose_us_answer'),
     },
     {
       id: 4,
-      title: "What are you pricing options?",
-      desc: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('faq_pricing_options_question'),
+      desc: t('faq_pricing_options_answer'),
     },
     {
       id: 5,
-      title: "Do you prove ongoing support after project complete?",
-      desc: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('faq_ongoing_support_question'),
+      desc: t('faq_ongoing_support_answer'),
     },
     {
       id: 6,
-      title: "How can I contact your support team for further assistance?",
-      desc: "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+      title: t('faq_contact_support_team_question'),
+      desc: t('faq_contact_support_team_answer'),
     },
   ],
-};
+});
 
-export const contactUs = {
-  title: "CONTACT US",
-  title2: "Already Interested In Working With Us?",
-  desc: "Optimize costs and efficiency with our software solutions. Contact us now for a free consultation! Only start working together once you see we can be trusted",
-};
 
-export const dataFoolter = {
+export const contactUs = (t: (key: string) => string) => ({
+  title: t('contact_us_title'),
+  title2: t('contact_us_heading'),
+  desc: t('contact_us_description'),
+});
+
+export const dataFoolter = (t: (key: string) => string) => ({
   brand: {
-    title: "iMader",
-    desc: "Welcome to Innovation Mader, your premier partner in digital innovation. Our mission is to empower businesses to thrive in the digital age through cutting-edge technology and innovative solutions. As a leading provider of digital services, we specialize in transforming your business ideas into reality, leveraging the latest advancements in technology to drive growth and success.",
+    title: t('footer_brand_title'),
+    desc: t('footer_brand_desc'),
   },
   listMenu: {
-    title: "List Menu",
+    title: t('footer_list_menu_title'),
     list: [
       {
         id: 1,
-        name: "Our Services",
+        name: t('footer_list_menu_services'),
         path: "/services",
       },
       {
         id: 2,
-        name: "Project Portfolio",
+        name: t('footer_list_menu_projects'),
         path: "/projects",
       },
       {
         id: 3,
-        name: "About Us",
+        name: t('footer_list_menu_about_us'),
         path: "/about-us",
       },
       {
         id: 4,
-        name: "Contact Us",
+        name: t('footer_list_menu_contact_us'),
         path: "/contact-us",
       },
     ],
   },
   companyInfo: {
-    title: "Company Info",
-    email: "business@i-mader.tech",
-    phone: "+6281272914023",
-    address: "DKI Jakarta, Indonesia",
+    title: t('footer_company_info_title'),
+    email: "business@i-mader.tech", // This might be static, adjust if needed
+    phone: "+6281272914023", // This might be static, adjust if needed
+    address: t('footer_company_info_address'),
   },
-};
+});
 
 export const dataCompany: TrustedCompanyItem[] = [
   {

@@ -1,3 +1,5 @@
+import TextWriter from "./TextWriter";
+
 interface TitleComponentProps {
   title: string;
   page: string;

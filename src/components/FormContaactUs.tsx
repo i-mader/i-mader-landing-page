@@ -19,8 +19,11 @@ import {
   ContactFormValues,
 } from "@/lib/validation/contactValidation";
 import { postContactForm } from "@/lib/api/contact";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const FormContactUs = () => {
+  const t = useTranslations();
   const [loading, setLoading] = useState(false);
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -36,12 +39,12 @@ const FormContactUs = () => {
     try {
       await postContactForm(values);
       toast({
-        description: "Form submitted successfully!",
+        description: t('form_submit_success'), // Translation key for success message
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        description: "Failed to submit form.",
+        description: t('form_submit_failure'), // Translation key for failure message
       });
     } finally {
       setLoading(false);
@@ -52,7 +55,7 @@ const FormContactUs = () => {
     <div className="relative">
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 z-50 text-white text-xl">
-          Loading...
+          {t('loading')}
         </div>
       )}
       <Form {...form}>
@@ -62,9 +65,11 @@ const FormContactUs = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-neutral-700 text-xl">Name</FormLabel>
+                <FormLabel className="text-neutral-700 text-xl">
+                  {t('form_name_label')}
+                </FormLabel>
                 <FormControl className="mt-3">
-                  <Input placeholder="your name here..." {...field} />
+                  <Input placeholder={t('form_name_placeholder')} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -76,10 +81,10 @@ const FormContactUs = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-neutral-700 text-xl">
-                  Email
+                  {t('form_email_label')}
                 </FormLabel>
                 <FormControl className="mt-3">
-                  <Input placeholder="yourmail@company.com" {...field} />
+                  <Input placeholder={t('form_email_placeholder')} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -91,12 +96,12 @@ const FormContactUs = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-neutral-700 text-xl">
-                  Message
+                  {t('form_message_label')}
                 </FormLabel>
                 <FormControl className="mt-3">
                   <Textarea
                     rows={4}
-                    placeholder="your message here..."
+                    placeholder={t('form_message_placeholder')}
                     {...field}
                   />
                 </FormControl>
@@ -105,12 +110,19 @@ const FormContactUs = () => {
             )}
           />
           <div className="flex items-center justify-end mt-8">
-            <Button
-              type="submit"
-              className="bg-primary-original hover:bg-opacity-90 rounded-none text-white font-medium text-base"
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              className="cursor-pointer max-w-max"
             >
-              Send Message
-            </Button>
+              <Button
+                type="submit"
+                className="bg-primary-original hover:bg-opacity-90 rounded-none text-white font-medium text-base"
+              >
+                {t('form_send_button')}
+              </Button>
+            </motion.div>
           </div>
         </form>
       </Form>

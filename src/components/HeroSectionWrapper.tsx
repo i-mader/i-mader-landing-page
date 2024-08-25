@@ -1,5 +1,6 @@
+"use client";
 import React, { ReactNode } from "react";
-import HighlightProject from "./HighlightProject";
+import { motion } from "framer-motion";
 
 interface HeroSectionWrapperProps {
   children: ReactNode;
@@ -9,9 +10,9 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({
   children,
 }) => {
   return (
-    <section className="hero-section">
+    <motion.section initial="hidden" animate="visible" className="hero-section">
       <div className="container mx-auto">{children}</div>
-    </section>
+    </motion.section>
   );
 };
 

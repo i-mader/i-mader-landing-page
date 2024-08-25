@@ -1,10 +1,14 @@
-import { dataFoolter } from "@/lib/data";
-import { useLocale } from "next-intl";
-import Link from "next/link";
-import React from "react";
+import { dataFoolter } from '@/lib/data';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import Link from 'next/link';
+import React from 'react';
 
 const Footer = ({ isMobile }: { isMobile?: boolean }) => {
+  const t = useTranslations();
   const localeActive = useLocale();
+  const footerData = dataFoolter(t);
+
   return (
     <footer className="footer">
       <div className={`mx-auto ${isMobile ? "" : "container"}`}>
@@ -12,10 +16,10 @@ const Footer = ({ isMobile }: { isMobile?: boolean }) => {
           <div className="col-span-12 lg:col-span-6">
             <div>
               <p className="text-white text-[28px]">
-                {dataFoolter.brand.title}
+                {footerData.brand.title}
               </p>
               <p className="text-white text-sm mt-4">
-                {dataFoolter.brand.desc}
+                {footerData.brand.desc}
               </p>
               <div className="flex items-center gap-6 mt-6">
                 <Link
@@ -96,30 +100,28 @@ const Footer = ({ isMobile }: { isMobile?: boolean }) => {
           <div className="col-span-6 lg:col-span-3">
             <div className="pl-0 lg:pl-10">
               <p className="text-white text-base lg:text-2xl">
-                {dataFoolter.listMenu.title}
+                {footerData.listMenu.title}
               </p>
               <ul className="mt-4 lg:mt-[31px]">
-                {dataFoolter.listMenu.list.map((item: any) => {
-                  return (
-                    <li className="text-white" key={item.id}>
-                      <Link
-                        href={`/${localeActive}/${item.path}`}
-                        className="text-xs lg:text-sm"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  );
-                })}
+                {footerData.listMenu.list.map((item: any) => (
+                  <li className="text-white" key={item.id}>
+                    <Link
+                      href={`/${localeActive}${item.path}`}
+                      className="text-xs lg:text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
           <div className="col-span-6 lg:col-span-3">
             <p className="text-white text-base lg:text-2xl">
-              {dataFoolter.companyInfo.title}
+              {footerData.companyInfo.title}
             </p>
             <div className="flex items-center gap-2 mt-3 lg:mt-6 lg:gap-4">
-              <svg
+            <svg
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
@@ -135,14 +137,14 @@ const Footer = ({ isMobile }: { isMobile?: boolean }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white text-xs lg:text-sm"
-                href="mailto:business@i-mader.tech"
+                href={`mailto:${footerData.companyInfo.email}`}
               >
-                {dataFoolter.companyInfo.email}
+                {footerData.companyInfo.email}
               </Link>
             </div>
 
             <div className="flex items-center mt-3 lg:mt-6 gap-2 lg:gap-4">
-              <svg
+            <svg
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
@@ -154,14 +156,13 @@ const Footer = ({ isMobile }: { isMobile?: boolean }) => {
                   fill="#AA99FF"
                 />
               </svg>
-
               <p className="text-white text-xs lg:text-sm">
-                {dataFoolter.companyInfo.phone}
+                {footerData.companyInfo.phone}
               </p>
             </div>
 
             <div className="flex items-center mt-3 lg:mt-6 gap-2 lg:gap-4">
-              <svg
+            <svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -173,23 +174,22 @@ const Footer = ({ isMobile }: { isMobile?: boolean }) => {
                   fill="#AA99FF"
                 />
               </svg>
-
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white text-xs lg:text-sm"
                 href="https://www.google.com/maps/place/Gedung+Wirausaha/@-6.2138777,106.8285411,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f4088c56757d:0x253f935e5b0a44fd!8m2!3d-6.213883!4d106.831116!16s%2Fg%2F1yfdpryjm?entry=ttu"
               >
-                {dataFoolter.companyInfo.address}
+                {footerData.companyInfo.address}
               </Link>
             </div>
           </div>
         </div>
         <hr className="bg-neutral-500 text-neutral-500 mt-[42px] lg:mt-[70px] mb-3 lg:mb-6" />
         <div className="flex items-center justify-between">
-          <p className="text-white text-xl">iMader</p>
+          <p className="text-white text-xl">{t('footer_brand_title')}</p>
           <p className="text-white text-md">
-            © imader {new Date().getFullYear()} all rights reserved
+            © imader {new Date().getFullYear()} {t('footer_copyright')}
           </p>
         </div>
       </div>

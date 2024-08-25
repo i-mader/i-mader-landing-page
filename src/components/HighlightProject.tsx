@@ -11,14 +11,15 @@ import { Navigation } from "swiper/modules";
 import IconArrowRightBig from "./icons/arrow-right-big";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import { dataHighlightProject, ImageBannerProjectContent } from "@/lib/data";
+import { dataHighlightProject } from "@/lib/data";
+import { useTranslations } from "next-intl";
 
 const HighlightProject = () => {
+  const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState<number>(1);
   const swiperRef = useRef<any>(null);
   return (
     <div className="grid grid-cols-6 lg:grid-cols-12">
-      {/* <section className="bg-primary-original p-4 lg:p-[42px] lg:max-w-[588px] relative"> */}
       <section className="order-last lg:order-1 col-span-6 bg-primary-original p-4 lg:p-[42px] relative">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -45,8 +46,8 @@ const HighlightProject = () => {
         <div className="h-[2px] w-full bg-primary-soft mt-3 lg:mt-[42px]"></div>
         <div className="relative flex items-center justify-between mt-4 lg:mt-[42px]">
           <div className="button-swiper static flex items-center gap-x-5">
-            <div className="swiper-button-prev">Prev</div>
-            <div className="swiper-button-next">Next</div>
+            <div className="swiper-button-prev min-w-min">{t('prev')}</div>
+            <div className="swiper-button-next min-w-min">{t('next')}</div>
           </div>
 
           <div className="flex items-center gap-x-2">
@@ -62,7 +63,6 @@ const HighlightProject = () => {
           </div>
         </div>
       </section>
-      {/* <section className="bg-primary-original p-4 lg:p-[42px] lg:max-w-[588px] relative"> */}
       <section className="lg:order-last col-span-6 bg-primary-original relative">
         <div className="relative w-full h-[198px] lg:h-full">
           <Image

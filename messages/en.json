@@ -1,10 +1,170 @@
 {
-  "HomePage": {
-    "title": "Craft and Build Creative Things For Your Purpose",
-    "desc": "In the increasingly rapidly developing digital era, adapting technology in business is no longer an option, but a necessity. switch from conventional methods now"
-  },
-  "ServicePage": {
-    "title": "We Build Stable And Scalable Applications",
-    "desc": "We will only give the best to each of our customers, see what we can do for your business, start transforming now and develop your business more efficiently"
-  }
+  "craft_title": "Craft and Build Creative Things For Your Purpose",
+  "craft_desc": "In the increasingly rapidly developing digital era, adapting technology in business is no longer an option, but a necessity. Switch from conventional methods now.",
+  
+  "clients_title": "CLIENTS",
+
+  "trusted_by_heading": "We Trusted By Awesome Companies",
+  "trusted_by_description": "Many large companies have trusted us, let’s be one of them by starting to work with us and experience for yourself the extraordinary things we produce for your business.",
+  "trusted_by_satisfied_clients": "1.000+",
+  "trusted_by_satisfied_clients_label": "Our satisfied clients",
+  "trusted_by_partners": "150+",
+  "trusted_by_partners_label": "Companies partner",
+  "trusted_by_projects": "300+",
+  "trusted_by_projects_label": "Project well done",
+
+  "services_title": "We Provide The Best Service For Your Needs",
+  
+  "software_development_title": "Software Development",
+  "software_development_sub_title": "Web & mobile app development, Back-end operation.",
+  "software_development_desc": "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems",
+  "software_development_mvp": "MVP development",
+  "software_development_full_stack": "Full stack development",
+  "software_development_mobile_app": "Mobile app development",
+  "software_development_web": "Web development",
+  "software_development_frontend": "Front-end development",
+
+  "devops_consultation_title": "DevOps Consultation",
+  "devops_consultation_sub_title": "Data center security, Technology optimization, Software tools",
+  "devops_consultation_desc": "An approach that combines software development (Dev) and information technology operations (Ops) in a harmonious whole to drive better",
+  "devops_consultation_engineers": "DevOps engineers",
+  "devops_consultation_security": "Data Security",
+  "devops_consultation_framework": "Framework Consultant",
+  "devops_consultation_ai": "AI integration tools",
+  "devops_consultation_ml": "Machine learning program",
+
+  "software_consultant_title": "Software Consultant",
+  "software_consultant_sub_title": "System maintenance, Security consultant, Best IT Framework",
+  "software_consultant_desc": "A linchpin in the technological sector, deftly navigating the confluence of business acumen and IT expertise. Within our professional gambit.",
+  "software_consultant_api": "API development & integrations",
+  "software_consultant_testing": "Testing and QA capabilities",
+  "software_consultant_backend": "Backend development",
+  "software_consultant_design": "Design expertise consultant",
+  "software_consultant_seo": "SEO web development",
+
+  "now": "Now",
+
+  "every": "Every",
+  "product": "Product",
+  "we_build_has_a_different": "We Build Has A Different",
+  "story": "Story",
+
+  "features": "FEATURES",
+  "features_desc": "We Serve Different From The Others",
+
+  "digital_innovation_title": "To be the Digital Innovation Leader For Your Business",
+  "digital_innovation_desc": "We are committed to delivering exceptional digital solutions that are tailored to meet your unique business needs",
+
+  "we": "We",
+  "build": "Build",
+  "stable_and_scalable": "Stable And Scalable",
+  "applications": "Applications",
+  "build_stable_scalable_desc": "We will only give the best to each of our customers, see what we can do for your business, start transforming now and develop your business more efficiently.",
+
+  "show_more": "Show More",
+  "learn_more": "Learn More",
+  "about_us": "ABOUT US",
+  
+  "efficiency": "Efficiency",
+  "efficiency_desc": "Software services refer to the ability of a system or application to perform tasks more quickly, using fewer resources, or by minimizing the time and human effort",
+  
+  "saving_cost": "Saving Cost",
+  "saving_cost_desc": "Can often provide significant cost savings for companies. This can happen through process automation reducing labor costs, reduction in physical infrastructure costs",
+  
+  "competitiveness": "Competitiveness",
+  "competitiveness_desc": "Success in utilizing digital technology can increase a company's competitiveness. This includes the ability to bring products or services more quickly to market",
+  
+  "peace_of_mind": "Peace of Mind",
+  "peace_of_mind_desc": "You can focus on their core business activities without worrying about technical or operational issues of their IT systems. Using reliable and efficient software",
+
+  "skills_tools_technologies": "The Skills, Tools And Technologies We Are Really Good At:",
+  
+  "become_a": "Become A",
+  "pioneer": "Pioneer",
+  "in": "In",
+  "digitalizing": "Digitalizing",
+  "the_world": "The World",
+  "pioneer_description": "Welcome to Innovation Mader, your premier partner in digital innovation. Our mission is to empower businesses to thrive in the digital age through cutting-edge technology.",
+  "pioneer_whatsapp": "Whatsapp Us",
+
+  "experience_years_label": "10+ Years",
+  "experience_years_description": "We were founded in 2015 and continue to grow bigger to provide the best service for our customers in all their digital transformation needs.",
+
+  "partnership_label": "Our Partnership",
+  "partnership_description": "We have built trust in our brand partners in providing better service to our customers, they are trustworthy and really help with every need.",
+
+  "project_done_label": "Project Done",
+  "project_done_description": "There are so many projects that we have completed, everything went well and our customers were satisfied with the results, making us happy.",
+
+  "great_teams_label": "Great Teams",
+  "great_teams_description": "Everything we produce is inseparable from how extraordinary the team we have is, they are experts in their respective fields.",
+
+  "missions": "OUR MISSIONS",
+  "mission_1": "Increase efficiency and productivity through advanced digital solutions and easy to use",
+  "mission_2": "Develop technology products and services that can make things easier digitalization process in various sectors.",
+  "mission_3": "Encourage collaboration and innovation to create relevant technology and beneficial to society",
+  "mission_4": "Provide support and education to help clients adapt with digital transformation.",
+  "mission_5": "Committed to sustainability and social responsibility in everything the digitalization steps we are taking",
+
+  "footer_brand_title": "iMader",
+  "footer_brand_desc": "Welcome to Innovation Mader, your premier partner in digital innovation. Our mission is to empower businesses to thrive in the digital age through cutting-edge technology and innovative solutions. As a leading provider of digital services, we specialize in transforming your business ideas into reality, leveraging the latest advancements in technology to drive growth and success.",
+  "footer_list_menu_title": "List Menu",
+  "footer_list_menu_services": "Our Services",
+  "footer_list_menu_projects": "Project Portfolio",
+  "footer_list_menu_about_us": "About Us",
+  "footer_list_menu_contact_us": "Contact Us",
+  "footer_company_info_title": "Company Info",
+  "footer_company_info_address": "DKI Jakarta, Indonesia",
+  "footer_copyright": "all rights reserved",
+
+  "contact_us_title": "CONTACT US",
+  "contact_us_heading": "Already Interested In Working With Us?",
+  "contact_us_description": "Optimize costs and efficiency with our software solutions. Contact us now for a free consultation! Only start working together once you see we can be trusted",
+  "contact_us_whatsapp": "Whatsapp Us",
+
+  "form_name_label": "Name",
+  "form_name_placeholder": "your name here...",
+  "form_email_label": "Email",
+  "form_email_placeholder": "yourmail@company.com",
+  "form_message_label": "Message",
+  "form_message_placeholder": "your message here...",
+  "form_send_button": "Send Message",
+  "form_submit_success": "Form submitted successfully!",
+  "form_submit_failure": "Failed to submit form.",
+
+  "faqs_title": "FAQs",
+  "faqs_description": "Services detail, pricing information, and more to help you make an informed decision",
+  
+  "faq_service_offer_question": "What service do you offer?",
+  "faq_service_offer_answer": "Building customized software solutions tailored to your specific business needs, from web and mobile applications to complex enterprise systems.",
+
+  "faq_it_consulting_benefit_question": "How can your IT consulting services benefit my business?",
+  "faq_it_consulting_benefit_answer": "Our IT consulting services help streamline operations, enhance security, and leverage technology to drive your business growth. We work closely with you to identify the best strategies and solutions that align with your business objectives.",
+
+  "faq_why_choose_us_question": "Why should I choose you?",
+  "faq_why_choose_us_answer": "Because we are the best option with many years of experience in this expertise, and you will never be disappointed if you work together with us. We prioritize client satisfaction and deliver solutions that are not only effective but also tailored to your unique needs.",
+
+  "faq_pricing_options_question": "What are your pricing options?",
+  "faq_pricing_options_answer": "We offer flexible pricing options that are designed to meet the needs of businesses of all sizes. Whether you’re looking for a one-time project or ongoing support, we can create a pricing plan that works for you.",
+
+  "faq_ongoing_support_question": "Do you provide ongoing support after the project is complete?",
+  "faq_ongoing_support_answer": "Yes, we offer comprehensive ongoing support to ensure that your systems continue to run smoothly long after the project is complete. Our team is always available to assist with any issues or updates.",
+
+  "faq_contact_support_team_question": "How can I contact your support team for further assistance?",
+  "faq_contact_support_team_answer": "You can contact our support team through email, phone, or our dedicated support portal. We are committed to providing prompt and efficient assistance to ensure your business operations are uninterrupted.",
+
+  "product_story_heading": "Every Product We Build Has A Different Story",
+  "product_story_description": "We present the best results of what we have done, come see the story of every miracle of what has been realized through us and decide to collaborate with us.",
+
+  "home":"Home",
+  "service":"Service",
+  "project":"Project",
+  "contact_us":"Contact Us",
+  "about_us_nav": "About Us",
+  "next": "Next",
+  "prev": "Prev",
+  "loading": "Loading ...",
+
+  "label_comisaris":"BOARD OF COMMISIONER"
+
 }

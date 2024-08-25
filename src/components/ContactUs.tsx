@@ -1,17 +1,36 @@
+"use client";
 import { contactUs } from "@/lib/data";
 import Whatsapp from "./Whatsapp";
 import FormContaactUs from "@/components/FormContaactUs";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const SectionContactUs = () => {
+  const t = useTranslations();
+  const contactData = contactUs(t);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
   return (
-    <section className="contact-us">
-      <div className="container mx-auto">
+    <motion.section initial="hidden" animate="visible" className="contact-us">
+      <motion.div
+        ref={ref}
+        animate={inView ? "visible" : "hidden"}
+        initial="hidden"
+        variants={slideInFromLeft(0.5)}
+        className="container mx-auto"
+      >
         <div className="grid grid-cols-12 gap-4 lg:gap-16">
-          <div className="col-span-12 lg:col-span-6">
+          <motion.div
+            variants={slideInFromLeft(0.5)}
+            className="col-span-12 lg:col-span-6"
+          >
             <div>
               <div className="flex items-center gap-4">
                 <p className="text-primary-soft font-bold lg:text-base">
-                  {contactUs.title}
+                  {contactData.title}
                 </p>
                 <svg
                   width={200}
@@ -24,24 +43,27 @@ const SectionContactUs = () => {
                 </svg>
               </div>
               <h2 className="text-neutral-700 font-medium mt-4 font-raleway">
-                {contactUs.title2}
+                {contactData.title2}
               </h2>
               <p className="mt-2 text-neutral-600 mb-2 lg:mb-4">
-                {contactUs.desc}
+                {contactData.desc}
               </p>
               <div className="mt-4 lg:mt-6">
                 <Whatsapp />
               </div>
             </div>
-          </div>
-          <div className="col-span-12 lg:col-span-6">
+          </motion.div>
+          <motion.div
+            variants={slideInFromRight(0.5)}
+            className="col-span-12 lg:col-span-6"
+          >
             <div className="mt-6 lg:mt-0">
               <FormContaactUs />
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
