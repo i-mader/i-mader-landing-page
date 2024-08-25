@@ -1,22 +1,167 @@
 {
-  "HomePage": {
-    "title": "Rakit dan Bangun Hal-Hal Kreatif Untuk Tujuan Anda",
-    "desc": "Di era digital yang semakin pesat perkembangannya, adaptasi teknologi dalam bisnis bukan lagi sebuah pilihan, namun sebuah kebutuhan. beralih dari metode konvensional sekarang"
-  },
-  "ServicePage": {
-    "title": "Kami Dipercaya Oleh Perusahaan Yang Luar Biasa",
-    "desc": "Kami hanya akan memberikan yang terbaik kepada setiap pelanggan kami, lihat apa yang kami bisa lakukan untuk bisnis Anda, mulailah bertransformasi sekarang dan kembangkan bisnis Anda bisnis dengan lebih efisien"
-  },
-  "ProjectPage": {
-    "title": "Rakit dan Bangun Hal-Hal Kreatif Untuk Tujuan Anda",
-    "desc": "Di era digital yang semakin pesat perkembangannya, adaptasi teknologi dalam bisnis bukan lagi sebuah pilihan, namun sebuah kebutuhan. beralih dari metode konvensional sekarang"
-  },
-  "AboutUsPage": {
-    "title": "Rakit dan Bangun Hal-Hal Kreatif Untuk Tujuan Anda",
-    "desc": "Di era digital yang semakin pesat perkembangannya, adaptasi teknologi dalam bisnis bukan lagi sebuah pilihan, namun sebuah kebutuhan. beralih dari metode konvensional sekarang"
-  },
-  "ContactUsPage": {
-    "title": "Rakit dan Bangun Hal-Hal Kreatif Untuk Tujuan Anda",
-    "desc": "Di era digital yang semakin pesat perkembangannya, adaptasi teknologi dalam bisnis bukan lagi sebuah pilihan, namun sebuah kebutuhan. beralih dari metode konvensional sekarang"
-  }
+  "craft_title": "Rakit dan Bangun Hal-Hal Kreatif Untuk Tujuan Anda",
+  "craft_desc": "Di era digital yang semakin pesat perkembangannya, adaptasi teknologi dalam bisnis bukan lagi sebuah pilihan, namun sebuah kebutuhan. Beralih dari metode konvensional sekarang.",
+  
+  "clients_title": "KLIEN",
+
+  "trusted_by_heading": "Dipercaya Oleh Perusahaan Terbaik",
+  "trusted_by_description": "Banyak perusahaan besar telah mempercayai kami, jadilah salah satunya dengan mulai bekerja sama dengan kami dan rasakan sendiri hal-hal luar biasa yang kami hasilkan untuk bisnis Anda.",
+  "trusted_by_satisfied_clients": "1.000+",
+  "trusted_by_satisfied_clients_label": "Klien kami yang puas",
+  "trusted_by_partners": "150+",
+  "trusted_by_partners_label": "Mitra perusahaan",
+  "trusted_by_projects": "300+",
+  "trusted_by_projects_label": "Proyek yang berhasil",
+
+  "services_title": "Kami Memberikan Layanan Terbaik Untuk Kebutuhan Anda",
+  
+  "software_development_title": "Pengembangan Perangkat Lunak",
+  "software_development_sub_title": "Pengembangan web & aplikasi seluler, Operasi back-end.",
+  "software_development_desc": "Membangun solusi perangkat lunak yang disesuaikan dengan kebutuhan bisnis spesifik Anda, mulai dari aplikasi web dan seluler hingga sistem perusahaan yang kompleks",
+  "software_development_mvp": "Pengembangan MVP",
+  "software_development_full_stack": "Pengembangan Full Stack",
+  "software_development_mobile_app": "Pengembangan Aplikasi Seluler",
+  "software_development_web": "Pengembangan Web",
+  "software_development_frontend": "Pengembangan Front-end",
+
+  "devops_consultation_title": "Konsultasi DevOps",
+  "devops_consultation_sub_title": "Keamanan pusat data, Pengoptimalan teknologi, Alat perangkat lunak",
+  "devops_consultation_desc": "Pendekatan yang menggabungkan pengembangan perangkat lunak (Dev) dan operasi teknologi informasi (Ops) secara harmonis untuk mendorong kolaborasi yang lebih baik",
+  "devops_consultation_engineers": "Insinyur DevOps",
+  "devops_consultation_security": "Keamanan Data",
+  "devops_consultation_framework": "Konsultan Kerangka Kerja",
+  "devops_consultation_ai": "Alat Integrasi AI",
+  "devops_consultation_ml": "Program Pembelajaran Mesin",
+
+  "software_consultant_title": "Konsultan Perangkat Lunak",
+  "software_consultant_sub_title": "Pemeliharaan sistem, Konsultan keamanan, Kerangka TI Terbaik",
+  "software_consultant_desc": "Penentu utama di sektor teknologi, dengan ahli yang mampu menggabungkan wawasan bisnis dan keahlian TI. Dalam ruang lingkup profesional kami.",
+  "software_consultant_api": "Pengembangan & Integrasi API",
+  "software_consultant_testing": "Kemampuan Pengujian dan QA",
+  "software_consultant_backend": "Pengembangan Backend",
+  "software_consultant_design": "Konsultan Keahlian Desain",
+  "software_consultant_seo": "Pengembangan Web SEO",
+
+  "now": "Sekarang",
+
+  "every": "Setiap",
+  "product": "Produk",
+  "we_build_has_a_different": "Yang Kami Bangun Memiliki",
+  "story": "Cerita Berbeda",
+
+  "features": "FITUR",
+  "features_desc": "Kami Melayani Berbeda Dari Yang Lain",
+
+  "digital_innovation_title": "Menjadi Pemimpin Inovasi Digital Untuk Bisnis Anda",
+  "digital_innovation_desc": "Kami berkomitmen untuk memberikan solusi digital luar biasa yang disesuaikan dengan kebutuhan unik bisnis Anda",
+
+  "we": "Kami",
+  "build": "Membangun",
+  "stable_and_scalable": "Stabil Dan Dapat Diskalakan",
+  "applications": "Aplikasi",
+  "build_stable_scalable_desc": "Kami hanya akan memberikan yang terbaik kepada setiap pelanggan kami, lihat apa yang bisa kami lakukan untuk bisnis Anda, mulailah bertransformasi sekarang dan kembangkan bisnis Anda dengan lebih efisien.",
+
+  "show_more": "Tampilkan Lebih Banyak",
+  "learn_more": "Pelajari Lebih Lanjut",
+  "about_us": "TENTANG KAMI",
+  
+  "efficiency": "Efisiensi",
+  "efficiency_desc": "Layanan perangkat lunak mengacu pada kemampuan sistem atau aplikasi untuk melakukan tugas dengan lebih cepat, menggunakan lebih sedikit sumber daya, atau dengan meminimalkan waktu dan usaha manusia",
+  
+  "saving_cost": "Penghematan Biaya",
+  "saving_cost_desc": "Sering kali dapat memberikan penghematan biaya yang signifikan bagi perusahaan. Ini dapat terjadi melalui otomatisasi proses yang mengurangi biaya tenaga kerja, pengurangan biaya infrastruktur fisik",
+  
+  "competitiveness": "Daya Saing",
+  "competitiveness_desc": "Keberhasilan dalam memanfaatkan teknologi digital dapat meningkatkan daya saing perusahaan. Ini termasuk kemampuan untuk membawa produk atau layanan ke pasar lebih cepat",
+  
+  "peace_of_mind": "Ketenangan Pikiran",
+  "peace_of_mind_desc": "Anda dapat fokus pada aktivitas bisnis inti mereka tanpa khawatir tentang masalah teknis atau operasional dari sistem IT mereka. Menggunakan perangkat lunak yang andal dan efisien",
+
+  "skills_tools_technologies": "Keterampilan, Alat, dan Teknologi Yang Kami Kuasai:",
+  
+  "become_a": "Jadilah",
+  "pioneer": "Pelopor",
+  "in": "Dalam",
+  "digitalizing": "Digitalisasi",
+  "the_world": "Dunia",
+  "pioneer_description": "Selamat datang di Innovation Mader, mitra utama Anda dalam inovasi digital. Misi kami adalah untuk memberdayakan bisnis agar berkembang di era digital melalui teknologi canggih.",
+  "pioneer_whatsapp": "Hubungi Kami di Whatsapp",
+
+  "experience_years_label": "10+ Tahun",
+  "experience_years_description": "Kami didirikan pada tahun 2015 dan terus tumbuh lebih besar untuk memberikan layanan terbaik bagi pelanggan kami dalam semua kebutuhan transformasi digital mereka.",
+
+  "partnership_label": "Kemitraan Kami",
+  "partnership_description": "Kami telah membangun kepercayaan dengan mitra merek kami dalam memberikan layanan yang lebih baik kepada pelanggan kami, mereka dapat dipercaya dan sangat membantu dalam setiap kebutuhan.",
+
+  "project_done_label": "Proyek Selesai",
+  "project_done_description": "Ada begitu banyak proyek yang telah kami selesaikan, semuanya berjalan dengan baik dan pelanggan kami puas dengan hasilnya, membuat kami bahagia.",
+
+  "great_teams_label": "Tim Hebat",
+  "great_teams_description": "Segala sesuatu yang kami hasilkan tidak terlepas dari betapa luar biasanya tim yang kami miliki, mereka adalah ahli di bidangnya masing-masing.",
+
+  "missions": "MISI KAMI",
+  "mission_1": "Meningkatkan efisiensi dan produktivitas melalui solusi digital canggih dan mudah digunakan",
+  "mission_2": "Mengembangkan produk dan layanan teknologi yang dapat mempermudah proses digitalisasi di berbagai sektor.",
+  "mission_3": "Mendorong kolaborasi dan inovasi untuk menciptakan teknologi yang relevan dan bermanfaat bagi masyarakat",
+  "mission_4": "Memberikan dukungan dan edukasi untuk membantu klien beradaptasi dengan transformasi digital.",
+  "mission_5": "Berkomitmen pada keberlanjutan dan tanggung jawab sosial dalam setiap langkah digitalisasi yang kami ambil",
+
+  "footer_brand_title": "iMader",
+  "footer_brand_desc": "Selamat datang di Innovation Mader, mitra utama Anda dalam inovasi digital. Misi kami adalah memberdayakan bisnis untuk berkembang di era digital melalui teknologi mutakhir dan solusi inovatif. Sebagai penyedia layanan digital terkemuka, kami berspesialisasi dalam mengubah ide bisnis Anda menjadi kenyataan, memanfaatkan kemajuan terbaru dalam teknologi untuk mendorong pertumbuhan dan kesuksesan.",
+  "footer_list_menu_title": "Daftar Menu",
+  "footer_list_menu_services": "Layanan Kami",
+  "footer_list_menu_projects": "Portofolio Proyek",
+  "footer_list_menu_about_us": "Tentang Kami",
+  "footer_list_menu_contact_us": "Hubungi Kami",
+  "footer_company_info_title": "Informasi Perusahaan",
+  "footer_company_info_address": "DKI Jakarta, Indonesia",
+  "footer_copyright": "hak cipta dilindungi",
+
+  "contact_us_title": "HUBUNGI KAMI",
+  "contact_us_heading": "Sudah Tertarik Bekerja Sama Dengan Kami?",
+  "contact_us_description": "Optimalkan biaya dan efisiensi dengan solusi perangkat lunak kami. Hubungi kami sekarang untuk konsultasi gratis! Kami hanya akan mulai bekerja sama setelah Anda melihat bahwa kami dapat dipercaya",
+  "contact_us_whatsapp": "Hubungi Kami di Whatsapp",
+  "form_name_label": "Nama",
+  "form_name_placeholder": "Nama anda di sini...",
+  "form_email_label": "Email",
+  "form_email_placeholder": "Emailanda@perusahaan.com",
+  "form_message_label": "Pesan",
+  "form_message_placeholder": "Pesan anda di sini...",
+  "form_send_button": "Kirim Pesan",
+  "form_submit_success": "Formulir berhasil dikirim!",
+  "form_submit_failure": "Gagal mengirim formulir.",
+
+  "faqs_title": "FAQ",
+  "faqs_description": "Detail layanan, informasi harga, dan lainnya untuk membantu Anda membuat keputusan yang tepat",
+  
+  "faq_service_offer_question": "Layanan apa yang Anda tawarkan?",
+  "faq_service_offer_answer": "Membangun solusi perangkat lunak yang disesuaikan dengan kebutuhan bisnis spesifik Anda, mulai dari aplikasi web dan mobile hingga sistem perusahaan yang kompleks.",
+
+  "faq_it_consulting_benefit_question": "Bagaimana layanan konsultasi IT Anda dapat menguntungkan bisnis saya?",
+  "faq_it_consulting_benefit_answer": "Layanan konsultasi IT kami membantu merampingkan operasi, meningkatkan keamanan, dan memanfaatkan teknologi untuk mendorong pertumbuhan bisnis Anda. Kami bekerja sama dengan Anda untuk mengidentifikasi strategi dan solusi terbaik yang sesuai dengan tujuan bisnis Anda.",
+
+  "faq_why_choose_us_question": "Mengapa saya harus memilih Anda?",
+  "faq_why_choose_us_answer": "Karena kami adalah pilihan terbaik dengan banyak pengalaman dalam keahlian ini, dan Anda tidak akan pernah kecewa jika bekerja sama dengan kami. Kami mengutamakan kepuasan klien dan memberikan solusi yang tidak hanya efektif tetapi juga disesuaikan dengan kebutuhan unik Anda.",
+
+  "faq_pricing_options_question": "Apa opsi harga yang Anda tawarkan?",
+  "faq_pricing_options_answer": "Kami menawarkan opsi harga yang fleksibel yang dirancang untuk memenuhi kebutuhan bisnis dari berbagai ukuran. Baik Anda mencari proyek satu kali atau dukungan berkelanjutan, kami dapat membuat rencana harga yang sesuai untuk Anda.",
+
+  "faq_ongoing_support_question": "Apakah Anda menyediakan dukungan berkelanjutan setelah proyek selesai?",
+  "faq_ongoing_support_answer": "Ya, kami menawarkan dukungan berkelanjutan yang komprehensif untuk memastikan sistem Anda terus berjalan lancar setelah proyek selesai. Tim kami selalu siap membantu dengan masalah atau pembaruan apa pun.",
+
+  "faq_contact_support_team_question": "Bagaimana saya dapat menghubungi tim dukungan Anda untuk bantuan lebih lanjut?",
+  "faq_contact_support_team_answer": "Anda dapat menghubungi tim dukungan kami melalui email, telepon, atau portal dukungan khusus kami. Kami berkomitmen untuk memberikan bantuan yang cepat dan efisien untuk memastikan operasi bisnis Anda tidak terganggu.",
+
+  "product_story_heading": "Setiap Produk yang Kami Bangun Memiliki Cerita yang Berbeda",
+  "product_story_description": "Kami menyajikan hasil terbaik dari apa yang telah kami lakukan, datanglah melihat cerita dari setiap keajaiban yang telah diwujudkan melalui kami dan putuskan untuk berkolaborasi dengan kami.",
+
+  "home":"Beranda",
+  "service":"Servis",
+  "project":"Proyek",
+  "contact_us":"Hubungi Kami",
+  "about_us_nav": "Tentang Kami",
+  "next": "Selanjutnya",
+  "prev": "Sebelumnya",
+  "loading": "Menunggu ...",
+  "label_comisaris":"DEWAN KOMISARIS"
 }

@@ -1,7 +1,10 @@
+"use client"
+import React from "react";
 import IconArrowRightBig from "@/components/icons/arrow-right-big";
 import { ServiceItem } from "@/lib/data";
 import Link from "next/link";
-import React from "react";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const ItemService = ({
   data,
@@ -12,11 +15,15 @@ const ItemService = ({
   index: number;
   totalItems: number;
 }) => {
+  const t = useTranslations();
   // Check if this is the last item
   const isLastItem = index === totalItems - 1;
   return (
-    <div
-      className={`grid grid-cols-12 gap-3 lg:gap-0 mt-6 lg:mt-[60px] pb-6 lg:pb-[60px] ${
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      className={`grid grid-cols-12 gap-5 lg:gap-2 mt-6 lg:mt-[60px] pb-6 lg:pb-[60px] ${
         isLastItem ? "" : "border-b border-neutral-500"
       } `}
     >
@@ -79,13 +86,13 @@ const ItemService = ({
           <p className="text-white text-xs">{data.desc2}</p>
           <div className="flex items-center justify-between mt-4 lg:mt-6">
             <Link href="#" className="text-primary-soft underline">
-              Show More
+              {t('show_more')}
             </Link>
             <IconArrowRightBig />
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

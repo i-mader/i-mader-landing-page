@@ -6,40 +6,41 @@ import Link from "next/link";
 //
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface INavProps {
   containerStyle?: string;
   linkStyles?: string;
   underLineStyles?: string;
 }
-
-export const links = [
-  {
-    path: "/",
-    name: "home",
-  },
-  {
-    path: "/services",
-    name: "Services",
-  },
-  {
-    path: "/projects",
-    name: "Projects",
-  },
-  {
-    path: "/about-us",
-    name: "About Us",
-  },
-  {
-    path: "/contact-us",
-    name: "Contact Us",
-  },
-];
-
 const Nav = ({ containerStyle, linkStyles, underLineStyles }: INavProps) => {
+  const t = useTranslations();
   const path = usePathname();
   const localeActive = useLocale();
+
+  const links = [
+    {
+      path: "/",
+      name: t('home'),
+    },
+    {
+      path: "/services",
+      name: t('service'),
+    },
+    {
+      path: "/projects",
+      name: t('project'),
+    },
+    {
+      path: "/about-us",
+      name: t('about_us_nav'),
+    },
+    {
+      path: "/contact-us",
+      name: t('contact_us'),
+    },
+  ];
+
   return (
     <nav className={`${containerStyle}`}>
       {links.map((link: { path: string; name: string }) => {
