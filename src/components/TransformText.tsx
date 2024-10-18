@@ -36,7 +36,7 @@ const Heading: React.FC<TitleComponentProps> = ({ title, page }) => {
     const part1 = parts.slice(0, 2).join(" "); // "Craft and Build"
 
     const part2 = parts[2]; // "Creative"
-    const part3 = parts.slice(3, 5).join(" "); // "Things For Your"
+    const part3 = parts.slice(2, 4).join(" "); // "Things For Your"
     const part4 = parts.slice(4, 8).join(" "); // "Purpose"
 
     return (
