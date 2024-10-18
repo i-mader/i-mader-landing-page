@@ -11,7 +11,7 @@ import { getMessages } from "next-intl/server";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "I-Mader - Digital Innovation Maker For Your Business",
+  title: "iMader | Digital Innovation Maker For Your Business",
   description: "Digital Innovation Maker For Your Business",
   icons: {
     icon: "/fav-icon/favicon.ico?v=4",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "i-mader.tech",
-    title: "I-Mader - Digital Innovation Maker For Your Bussines",
+    title: "iMader | Digital Innovation Maker For Your Business",
     description: "Digital Innovation Maker For Your Business",
     type: "website",
   },
